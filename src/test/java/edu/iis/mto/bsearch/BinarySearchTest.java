@@ -13,22 +13,34 @@ class BinarySearchTest {
     @Test
     void OneElementSequenceTest() {
         int position = 0;
-        int firstTry = 4;
-        SearchResult searchRes = binSearch.search(firstTry, firstSeq);
+        int matchingNumber = 4;
+        SearchResult searchRes = binSearch.search(matchingNumber, firstSeq);
 
         assertTrue(searchRes.isFound());
         assertEquals(position, searchRes.getPosition());
-        assertEquals(firstTry, firstSeq[searchRes.getPosition()]);
+        assertEquals(matchingNumber, firstSeq[searchRes.getPosition()]);
     }
 
     @Test
     void OneElementSequenceWithoutOurNumberTest() {
-        int secondTry = 3;
+        int wrongNumber = 3;
         int position = -1;
-        SearchResult searchRes = binSearch.search(secondTry, firstSeq);
+        SearchResult searchRes = binSearch.search(wrongNumber, firstSeq);
 
         assertFalse(searchRes.isFound());
         assertEquals(position, searchRes.getPosition());
+    }
+
+    @Test
+    void IsItOurFirstNumberInSequenceTest() {
+        int[] seq = {3, 5};
+        int firstNumber = 3;
+        int position = 0;
+        SearchResult searchRes = binSearch.search(firstNumber, seq);
+
+        assertTrue(searchRes.isFound());
+        assertEquals(position, searchRes.getPosition());
+        assertEquals(firstNumber, seq[searchRes.getPosition()]);
     }
 
 }
