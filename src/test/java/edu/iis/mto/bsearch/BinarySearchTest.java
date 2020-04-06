@@ -60,11 +60,21 @@ class BinarySearchTest {
         int[] seq = {3, 5, 8};
         int centerNumber = 5;
         int position = seq.length / 2;
-        System.out.println(position);
         SearchResult searchRes = binSearch.search(centerNumber, seq);
 
         assertTrue(searchRes.isFound());
         assertEquals(position, searchRes.getPosition());
         assertEquals(centerNumber, seq[searchRes.getPosition()]);
+    }
+
+    @Test
+    void IsItThisNumberInSequenceTest() {
+        int[] seq = {3, 5, 8};
+        int thisNumber = 7;
+        int position = -1;
+        SearchResult searchRes = binSearch.search(thisNumber, seq);
+
+        assertFalse(searchRes.isFound());
+        assertEquals(position, searchRes.getPosition());
     }
 }
