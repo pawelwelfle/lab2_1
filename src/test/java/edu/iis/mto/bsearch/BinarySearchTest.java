@@ -43,4 +43,15 @@ class BinarySearchTest {
         assertEquals(firstNumber, seq[searchRes.getPosition()]);
     }
 
+    @Test
+    void IsItOurLastNumberInSequenceTest() {
+        int[] seq = {3, 5, 8};
+        int lastNumber = 8;
+        int position = seq.length - 1;
+        SearchResult searchRes = binSearch.search(lastNumber, seq);
+
+        assertTrue(searchRes.isFound());
+        assertEquals(position, searchRes.getPosition());
+        assertEquals(lastNumber, seq[searchRes.getPosition()]);
+    }
 }
