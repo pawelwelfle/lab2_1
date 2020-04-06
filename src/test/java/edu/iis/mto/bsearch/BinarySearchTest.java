@@ -54,4 +54,17 @@ class BinarySearchTest {
         assertEquals(position, searchRes.getPosition());
         assertEquals(lastNumber, seq[searchRes.getPosition()]);
     }
+
+    @Test
+    void IsItOurCenterNumberInSequenceTest() {
+        int[] seq = {3, 5, 8};
+        int centerNumber = 5;
+        int position = seq.length / 2;
+        System.out.println(position);
+        SearchResult searchRes = binSearch.search(centerNumber, seq);
+
+        assertTrue(searchRes.isFound());
+        assertEquals(position, searchRes.getPosition());
+        assertEquals(centerNumber, seq[searchRes.getPosition()]);
+    }
 }
