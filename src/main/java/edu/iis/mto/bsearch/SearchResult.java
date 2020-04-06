@@ -10,6 +10,8 @@ public class SearchResult {
     private static final int NOT_FOUND = -1;
     private int position = NOT_FOUND;
 
+
+
     public boolean isFound() {
         return position > NOT_FOUND;
     }
