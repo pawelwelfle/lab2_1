@@ -79,4 +79,13 @@ class BinarySearchTest {
         assertThat(searchRes.isFound(), is(false));
         assertThat(position, is(searchRes.getPosition()));
     }
+
+    @Test
+    void CheckEmptySequence(){
+        int[] seq = {};
+        int uselessNumber = 1;
+
+        assertThrows(IllegalArgumentException.class, () ->
+                        binSearch.search(uselessNumber, seq));
+    }
 }
