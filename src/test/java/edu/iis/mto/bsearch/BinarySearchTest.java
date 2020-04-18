@@ -11,7 +11,7 @@ class BinarySearchTest {
     private BinarySearch binSearch = BinarySearch.create();
 
     @Test
-    void OneElementSequenceTest() {
+    void CheckOneElementSequence() {
         int position = 0;
         int matchingNumber = 4;
         SearchResult searchRes = binSearch.search(matchingNumber, firstSeq);
@@ -22,7 +22,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void OneElementSequenceWithoutOurNumberTest() {
+    void CheckOneElementSequenceWithoutOurNumber() {
         int wrongNumber = 3;
         int position = -1;
         SearchResult searchRes = binSearch.search(wrongNumber, firstSeq);
@@ -32,7 +32,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void IsItOurFirstNumberInSequenceTest() {
+    void CheckIfIsItOurFirstNumberInSequence() {
         int[] seq = {3, 5};
         int firstNumber = 3;
         int position = 0;
@@ -44,7 +44,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void IsItOurLastNumberInSequenceTest() {
+    void CheckIfIsItOurLastNumberInSequence() {
         int[] seq = {3, 5, 8};
         int lastNumber = 8;
         int position = seq.length - 1;
@@ -56,7 +56,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void IsItOurCenterNumberInSequenceTest() {
+    void CheckIfIsItOurCenterNumberInSequence() {
         int[] seq = {3, 5, 8};
         int centerNumber = 5;
         int position = seq.length / 2;
@@ -68,7 +68,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void IsItThisNumberInSequenceTest() {
+    void CheckIfIsItThisNumberInSequence() {
         int[] seq = {3, 5, 8};
         int thisNumber = 7;
         int position = -1;
