@@ -11,6 +11,7 @@ public class BinarySearch {
 
     BinarySearch() {}
 
+
     /**
      * Metoda realizujaca wyszukiwanie binarne
      *
@@ -26,6 +27,10 @@ public class BinarySearch {
         int end = seq.length - 1;
         int center;
         SearchResult result = new SearchResult();
+
+        if (seq.length == 0){
+            throw new IllegalArgumentException();
+        }
 
         while (start <= end) {
             center = (start + end) / 2;
@@ -47,4 +52,5 @@ public class BinarySearch {
     public static BinarySearch create() {
         return new BinarySearch();
     }
+
 }
