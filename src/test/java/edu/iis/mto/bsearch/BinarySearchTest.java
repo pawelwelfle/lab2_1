@@ -2,6 +2,8 @@ package edu.iis.mto.bsearch;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTest {
@@ -16,9 +18,9 @@ class BinarySearchTest {
         int matchingNumber = 4;
         SearchResult searchRes = binSearch.search(matchingNumber, firstSeq);
 
-        assertTrue(searchRes.isFound());
-        assertEquals(position, searchRes.getPosition());
-        assertEquals(matchingNumber, firstSeq[searchRes.getPosition()]);
+        assertThat(searchRes.isFound(), is(true));
+        assertThat(position, is(searchRes.getPosition()));
+        assertThat(matchingNumber, is(firstSeq[searchRes.getPosition()]));
     }
 
     @Test
@@ -27,8 +29,8 @@ class BinarySearchTest {
         int position = -1;
         SearchResult searchRes = binSearch.search(wrongNumber, firstSeq);
 
-        assertFalse(searchRes.isFound());
-        assertEquals(position, searchRes.getPosition());
+        assertThat(searchRes.isFound(),is(false));
+        assertThat(position, is(searchRes.getPosition()));
     }
 
     @Test
@@ -38,9 +40,9 @@ class BinarySearchTest {
         int position = 0;
         SearchResult searchRes = binSearch.search(firstNumber, seq);
 
-        assertTrue(searchRes.isFound());
-        assertEquals(position, searchRes.getPosition());
-        assertEquals(firstNumber, seq[searchRes.getPosition()]);
+        assertThat(searchRes.isFound(), is(true));
+        assertThat(position, is(searchRes.getPosition()));
+        assertThat(firstNumber, is(seq[searchRes.getPosition()]));
     }
 
     @Test
@@ -50,9 +52,9 @@ class BinarySearchTest {
         int position = seq.length - 1;
         SearchResult searchRes = binSearch.search(lastNumber, seq);
 
-        assertTrue(searchRes.isFound());
-        assertEquals(position, searchRes.getPosition());
-        assertEquals(lastNumber, seq[searchRes.getPosition()]);
+        assertThat(searchRes.isFound(), is(true));
+        assertThat(position, is(searchRes.getPosition()));
+        assertThat(lastNumber, is(seq[searchRes.getPosition()]));
     }
 
     @Test
@@ -62,9 +64,9 @@ class BinarySearchTest {
         int position = seq.length / 2;
         SearchResult searchRes = binSearch.search(centerNumber, seq);
 
-        assertTrue(searchRes.isFound());
-        assertEquals(position, searchRes.getPosition());
-        assertEquals(centerNumber, seq[searchRes.getPosition()]);
+        assertThat(searchRes.isFound(), is(true));
+        assertThat(position, is(searchRes.getPosition()));
+        assertThat(centerNumber, is(seq[searchRes.getPosition()]));
     }
 
     @Test
@@ -74,7 +76,7 @@ class BinarySearchTest {
         int position = -1;
         SearchResult searchRes = binSearch.search(thisNumber, seq);
 
-        assertFalse(searchRes.isFound());
-        assertEquals(position, searchRes.getPosition());
+        assertThat(searchRes.isFound(), is(false));
+        assertThat(position, is(searchRes.getPosition()));
     }
 }
