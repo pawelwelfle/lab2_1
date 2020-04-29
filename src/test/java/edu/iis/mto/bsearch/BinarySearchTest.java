@@ -88,4 +88,15 @@ class BinarySearchTest {
         assertThrows(IllegalArgumentException.class, () ->
                         binSearch.search(uselessNumber, seq));
     }
+
+    @Test
+    void CheckIfNumberIsInUndorderedSeq() {
+        int[] seq = {6, 5, 1, 8};
+        int thisNumber = 6;
+
+        SearchResult searchRes = binSearch.search(thisNumber, seq);
+        assertThat(searchRes.isFound(), is(false));
+    }
+
+
 }
